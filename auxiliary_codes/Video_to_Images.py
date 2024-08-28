@@ -46,6 +46,6 @@ def extract_frames(video_file):
     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    video_file = 'abelhas_relevantes.mp4'  # Replace with your video's name
+    video_file = 'VIDEO.mp4'  # Replace with your video's name
     
     extract_frames(video_file)
