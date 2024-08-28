@@ -8,7 +8,7 @@ Detect and track bees going in and out of their nest is a challenging task. Bees
 Worth mentioning I also fooled around with getting the time and counting the amount of bees in the current frame by using a zone of interest polygon (invisible in the video), and with the HeatMapAnnotator as well as TraceAnnotator. 
 
 ## Disclaimers 
-The code is functionable, but not yet organized, so I also couldn't yet organize the python environment. 
+The code is functionable, but not yet organized, so I also couldn't yet organize the python environment. You might note (until I solve this) that there are many commented lines in the codes, and even parts of it that are 'outdated' (for example, some polygon shapes not being used). 
 
 The dataset used was a custom video I can't upload. I show examples below of the type of image taken, so it's reproducible.
 
@@ -17,6 +17,7 @@ The dataset used was a custom video I can't upload. I show examples below of the
 > detect_count_and_track: folder containing three scripts to detect, track and count (ins and outs) of bees in nests. See section "Running the codes" for details. 
 > results: folder with short videos representing the outputs of each method. 
 > training_loop: script to train a yolo model for object detection.
+> Weights: trained model weights (remember it heavily depends on the initial setting and conditions. You can re-train a network using new data and use the codes here available to track and count, but some changes might be necessary to adapt for the use_case, mainly in the method of counting. 
 
 ## About the task 
 
@@ -40,7 +41,14 @@ All methods had their value, but also their shortcomings due to the nature of th
 Codes are found in the "training_loop" and "detect_count_and_track" folders. 
 The training_loop code is easily executed by just inserting your 'data.yaml' file_path into the "data" variable. 
 
-The detect, track and count codes are also easily executable (abstracting from the dependencies... I'm on it ASAP) by plugging in the model_weights path and the video_file path into the code. 
+The detect, track and count codes are also easily executable (abstracting from the dependencies... I'm on it ASAP) by plugging in the model_weights path and the video_file path into the code. Below the imports, you'll find:
+
+model_weight = "INSERT_WEIGHTS_PATH"
+model = YOLO('model_weight')
+VIDEO_PATH = "INSERT_VIDEO_PATH"
+
+That should do it. 
+
 
 **OBSERVATIONS**: 
 **1)** I used a modified version of the annotator method in "LineZoneAnnotator" to display information on the videos. I uploaded my "Line_Zone" file together with the code. 
