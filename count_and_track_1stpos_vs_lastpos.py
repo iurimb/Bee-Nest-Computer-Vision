@@ -26,29 +26,6 @@ from time import strftime
 #import time
 from datetime import timedelta
 
-# Initializing a date and time 
-'''
-inicio = cronometro()
-# Seu código aqui
-
-
-#start = time.perf_counter()
-#print(start)
-
-#input(dt)
-
-while True: 
-    fim = cronometro()
-    time_delta = datetime.timedelta(seconds=fim-inicio) 
-    #print(time_delta)
-    #print(inicio)    
-    date_and_time_of_video = (date_and_time_of_video + time_delta)
-    #date_and_time_of_video = date_and_time_of_video + time_sec
-    print(date_and_time_of_video)
-#current_time_24hr = time.strftime("%H:%M:%S")
-#current_time_12hr = time.strftime("%I:%M:%S %p")
-#current_date = time.strftime("%Y-%m-%d")
-'''
 
 model_weight = "INSERT_WEIGHTS_PATH"
 model = YOLO('model_weight')
