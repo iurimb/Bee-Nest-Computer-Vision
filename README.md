@@ -52,5 +52,5 @@ That should do it.
 
 ### Some final observations 
 #### 1) I used a modified version of the annotator method in "LineZoneAnnotator" to display information on the videos. I uploaded my "Line_Zone" file together with the code. 
-**2)** I can't upload the original video used for training and testing. But I've uploaded the weights of the trained netowrk and they can be used for similar tasks.
-**3)** I did not have the time to adequately organize the code, I reckon it is a bit messy and there's work to be done there. I'm currently working on refactoring the personal projects I upload to github. 
+#### 2) I can't upload the original video used for training and testing. But I've uploaded the weights of the trained netowrk and they can be used for similar tasks.
+#### 3) I did not have the time to adequately organize the code, I reckon it is a bit messy and there's work to be done there. I'm currently working on refactoring the personal projects I upload to github. 
