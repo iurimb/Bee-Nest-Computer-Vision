@@ -43,9 +43,9 @@ The training_loop code is easily executed by just inserting your 'data.yaml' fil
 
 The detect, track and count codes are also easily executable (abstracting from the dependencies... I'm on it ASAP) by plugging in the model_weights path and the video_file path into the code. Below the imports, you'll find:
 
-model_weight = "INSERT_WEIGHTS_PATH"
-model = YOLO('model_weight')
-VIDEO_PATH = "INSERT_VIDEO_PATH"
+- model_weight = "INSERT_WEIGHTS_PATH"
+- model = YOLO('model_weight')
+- VIDEO_PATH = "INSERT_VIDEO_PATH"
 
 That should do it. 
 
