@@ -1,8 +1,7 @@
 # Bee-Nest-Computer-Vision Project
 
 ## Objectives: 
-Analysis of a bee nest. Bee detection, tracking and counting (in and out). Custom dataset. Using Yolov8, ByteTrack and Supervision. 
-
+**Analysis of a bee nest. Bee detection, tracking and counting (in and out). Custom dataset. Using Yolov8, ByteTrack and Supervision.**
 Detect and track bees going in and out of their nest is a challenging task. Bees are small, fast and blend in with the background. The main goal of the project was to develop a proof of concept and to test different ways of tracking the movement of the bees and counting if they go in or out. 
 
 Worth mentioning I also fooled around with getting the time and counting the amount of bees in the current frame by using a zone of interest polygon (invisible in the video), and with the HeatMapAnnotator as well as TraceAnnotator. 
