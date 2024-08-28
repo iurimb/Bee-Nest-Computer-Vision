@@ -40,6 +40,8 @@ All methods had their value, but also their shortcomings due to the nature of th
 Codes are found in the "training_loop" and "detect_count_and_track" folders. 
 The training_loop code is easily executed by just inserting your 'data.yaml' file_path into the "data" variable. 
 
+The detect, track and count codes are also easily executable (abstracting from the dependencies... I'm on it ASAP) by plugging in the model_weights path and the video_file path into the code. 
+
 **OBSERVATIONS**: 
 **1)** I used a modified version of the annotator method in "LineZoneAnnotator" to display information on the videos. I uploaded my "Line_Zone" file together with the code. 
 **2)** I can't upload the original video used for training and testing. But I've uploaded the weights of the trained netowrk and they can be used for similar tasks.
