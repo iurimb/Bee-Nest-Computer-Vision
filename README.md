@@ -8,11 +8,12 @@ Detect and track bees going in and out of their nest is a challenging task. Bees
 Worth mentioning I also fooled around with getting the time and counting the amount of bees in the current frame by using a zone of interest polygon (invisible in the video), and with the HeatMapAnnotator as well as TraceAnnotator. 
 
 ## Disclaimers 
-The code is functionable, but not yet organized. The dataset used was a custom video. Further down I show examples of images taken from the video, and it's also possible to see examples in the "results" folder, that contains very short representative footages of some of the results for each method used. 
+The code is functionable, but not yet organized, so I also couldn't yet organize the python environment. 
+
+The dataset used was a custom video I can't upload. I show examples below of the type of image taken, so it's reproducible.
 
 ## Folders 
 
-> Auxiliary_codes: only a simple script to save frames from a video.
 > detect_count_and_track: folder containing three scripts to detect, track and count (ins and outs) of bees in nests. See section "Running the codes" for details. 
 > results: folder with short videos representing the outputs of each method. 
 > training_loop: script to train a yolo model for object detection.
@@ -36,7 +37,8 @@ Worth mentioning it was firstly considered solving this problem by modelling it 
 All methods had their value, but also their shortcomings due to the nature of the task. The methods using two points or even just comparing first to last position were more effective than a single line or two lines (as the code available). This project was merely experimental and is by no means a finished product.
 
 ## Running the codes
-Codes are found in the "auxiliary_codes", "training_loop" and "detect_count_and_track" folders. 
+Codes are found in the "training_loop" and "detect_count_and_track" folders. 
+The training_loop code is easily executed by just inserting your 'data.yaml' file_path into the "data" variable. 
 
 **OBSERVATIONS**: 
 **1)** I used a modified version of the annotator method in "LineZoneAnnotator" to display information on the videos. I uploaded my "Line_Zone" file together with the code. 
