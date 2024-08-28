@@ -1,9 +1,23 @@
-# Bee-Nest-Computer-Vision
-Computer Vision project. Analysis of a bee nest. Bee detection, tracking and counting (in and out). Custom dataset. Using Yolov8, ByteTrack and Supervision. 
+# Bee-Nest-Computer-Vision Project
 
-Detect and track bees going in and out of their nest is a challenging task. Bees are small, fast and blend in with the background. The main goal of the project was to develop an MVP and to test different ways of tracking the movement of the bees and counting if they go in or out. 
+## Objectives: 
+Analysis of a bee nest. Bee detection, tracking and counting (in and out). Custom dataset. Using Yolov8, ByteTrack and Supervision. 
+
+Detect and track bees going in and out of their nest is a challenging task. Bees are small, fast and blend in with the background. The main goal of the project was to develop a proof of concept and to test different ways of tracking the movement of the bees and counting if they go in or out. 
 
 Worth mentioning I also fooled around with getting the time and counting the amount of bees in the current frame by using a zone of interest polygon (invisible in the video), and with the HeatMapAnnotator as well as TraceAnnotator. 
+
+## Disclaimers 
+The code is functionable, but not yet organized. The dataset used was a custom video. Further down I show examples of images taken from the video, and it's also possible to see examples in the "results" folder, that contains very short representative footages of some of the results for each method used. 
+
+## Folders 
+
+> Auxiliary_codes: only a simple script to save frames from a video.
+> detect_count_and_track: folder containing three scripts to detect, track and count (ins and outs) of bees in nests. See section "Running the codes" for details. 
+> results: folder with short videos representing the outputs of each method. 
+> training_loop: script to train a yolo model for object detection.
+
+## About the task 
 
 The following image contains an example of the nest with one bee that's just arrived and is going in, with the camera angle in such a way that it looks down on the nest. 
 
@@ -15,11 +29,14 @@ After annotating some 200~300 frames for object detection, I trained a yolov8-n 
 
 ![frame_386](https://github.com/user-attachments/assets/e94a531f-8d41-4363-a7d4-344fabd896ca)
 
-Because of these specificities, tracking and, most importantly, counting the number of bees that go in and out become a challenging task. Hence, I tried different techniques and filters. Mainly, I tried: 1) using a line to analyse if the detected bee crossed it from inside out (going out) or the inverse (going in); 2) comparing the first position of detection of each tracked bee to the last; 3) using two points as references and compare the first and last detections of a given bee (tracked) to those points to define if it's going in or out. You'll find three source codes correspondently.
+Because of these specificities, tracking and, most importantly, counting the number of bees that go in and out become a challenging task. Hence, I tried different techniques and filters. The three methods available in "detect_count_and_track" are: 1) using lines and crossing lines as references; 2) comparing the first position of detection of each tracked bee to the last one; 3) using two points as references and compare the first and last detections of a given bee (tracked) to those points to define if it's going in or out. You'll find three source codes correspondently.
 
-All methods had their value, but also their shortcomings due to the nature of the task. The methods using two points were or even just comparing first to last position were more effective. The line method was the most faulty one. For it to developed into a full fledged finished product, with the best accuracy possible, more treatment of the data would be required. Nonetheless, I believe and deem all of these developments as worthy, and that's why I uploaded the three of them, even though they are not perfect. The rocky path is the most valuable asset for learning.
+Worth mentioning it was firstly considered solving this problem by modelling it as a classification problem, that'd have as input the cropped images of the last frames in which a tracked bee would appear. The idea behind it being the pose of the bee could indicate if it's going in or out. But the images cropped were too low resolution and this method, that was promising, had to be dropped. 
 
-I've uploaded three short videos showing results. 
+All methods had their value, but also their shortcomings due to the nature of the task. The methods using two points or even just comparing first to last position were more effective than a single line or two lines (as the code available). This project was merely experimental and is by no means a finished product.
+
+## Running the codes
+Codes are found in the "auxiliary_codes", "training_loop" and "detect_count_and_track" folders. 
 
 **OBSERVATIONS**: 
 **1)** I used a modified version of the annotator method in "LineZoneAnnotator" to display information on the videos. I uploaded my "Line_Zone" file together with the code. 
