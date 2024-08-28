@@ -344,19 +344,6 @@ for frame in frames_generator:
     cv2.imshow("frame", annotated_frame)
     if cv2.waitKey(25) & 0xFF == ord('q'):
         break
-        #TODO pensar em uma lógica pra anotar a detecção sem o ID
-    #img_to_show = Image.fromarray(annotated_frame)
-    #img_to_show.show()
-
-        #input("stop")
-        #detections_crossed_in = detections[crossed_in]
-        
-        #print("DETECTIONS_FULL", detections)
-        #print("DETECTIONS_CROSSE", detections_crossed_in)
-        #print("CROSSED", crossed_in, crossed_out)
-        #input("veja ai")
-       
-        #for xyxy in detections_crossed_in.xyxy:
-        #    crop = sv.crop_image(frame, xyxy)
+     
 
         
