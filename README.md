@@ -13,11 +13,11 @@ The dataset used was a custom video I can't upload. I show examples below of the
 
 ## Folders 
 
-> detect_count_and_track: folder containing three scripts to detect, track and count (ins and outs) of bees in nests. See section "Running the codes" for details. 
-> results: folder with short videos representing the outputs of each method. 
-> training_loop: script to train a yolo model for object detection.
-> Weights: trained model weights (remember it heavily depends on the initial setting and conditions. You can re-train a network using new data and use the codes here available to track and count, but some changes might be necessary to adapt for the use_case, mainly in the method of counting.
-> Line_Zone: Line_Zone code I use that contains a modified function for annotating info. You could substitute the original line_zone file with mine or only copy the modified method code into yours ("_annotate_anything_count"). Alternatevely, you can give it a different name and import it. 
+- detect_count_and_track: folder containing three scripts to detect, track and count (ins and outs) of bees in nests. See section "Running the codes" for details. 
+- results: folder with short videos representing the outputs of each method. 
+- training_loop: script to train a yolo model for object detection.
+- Weights: trained model weights (remember it heavily depends on the initial setting and conditions. You can re-train a network using new data and use the codes here available to track and count, but some changes might be necessary to adapt for the use_case, mainly in the method of counting.
+- Line_Zone: Line_Zone code I use that contains a modified function for annotating info. You could substitute the original line_zone file with mine or only copy the modified method code into yours ("_annotate_anything_count"). Alternatevely, you can give it a different name and import it. 
 
 ## About the task 
 
