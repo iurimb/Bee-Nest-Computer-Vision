@@ -49,12 +49,12 @@ while True:
 #current_time_12hr = time.strftime("%I:%M:%S %p")
 #current_date = time.strftime("%Y-%m-%d")
 '''
-#model = YOLO('best_new_bees.pt')
-model = YOLO('abelhas_chegando.pt')
-ABELHA_CIMA = "abelhas_cima.mp4"
-ABELHA_CIMA_10FPS = "part3600-12900-10fps.avi"
-video_da_vez = ABELHA_CIMA_10FPS
-vcap = cv2.VideoCapture(ABELHA_CIMA_10FPS)
+
+model_weight = "INSERT_WEIGHTS_PATH"
+model = YOLO('model_weight')
+VIDEO_PATH = "INSERT_VIDEO_PATH"
+video_da_vez = VIDEO_PATH
+vcap = cv2.VideoCapture(video_da_vez)
 bounding_box_annotator = sv.BoxAnnotator()
 label_annotator = sv.LabelAnnotator()
 trace_annotator = sv.TraceAnnotator()
@@ -70,9 +70,8 @@ video = cv2.VideoWriter('Tracking_Counting_With_Time.mp4', fourcc, 15, (int(widt
 #input(width)
 #input(height)
 tracker = sv.ByteTrack(0.25, 50)
-frames_generator = sv.get_video_frames_generator(ABELHA_CIMA_10FPS)
+frames_generator = sv.get_video_frames_generator(video_da_vez)
 heat_map_annotator = sv.HeatMapAnnotator()
-# frames_generator = sv.get_video_frames_generator(ABELHA_CIMA_10FPS)
 #video = cv2.VideoCapture(sasa)
 #fps = video.get(cv2.CAP_PROP_FPS)
 #input(fps)
@@ -319,17 +318,7 @@ for frame in frames_generator:
     cv2.imshow("frame", annotated_frame)
     if cv2.waitKey(25) & 0xFF == ord('q'):
         break
-        #TODO pensar em uma lógica pra anotar a detecção sem o ID
-    #img_to_show = Image.fromarray(annotated_frame)
-    #img_to_show.show()
 
-        #input("stop")
-        #detections_crossed_in = detections[crossed_in]
-        
-        #print("DETECTIONS_FULL", detections)
-        #print("DETECTIONS_CROSSE", detections_crossed_in)
-        #print("CROSSED", crossed_in, crossed_out)
-        #input("veja ai")
        
         #for xyxy in detections_crossed_in.xyxy:
         #    crop = sv.crop_image(frame, xyxy)
