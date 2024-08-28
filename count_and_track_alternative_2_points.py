@@ -25,38 +25,13 @@ from time import strftime
 #import time
 from datetime import timedelta
 import math 
-# Initializing a date and time 
-'''
-inicio = cronometro()
-# Seu código aqui
 
 
-#start = time.perf_counter()
-#print(start)
-
-#input(dt)
-
-while True: 
-    fim = cronometro()
-    time_delta = datetime.timedelta(seconds=fim-inicio) 
-    #print(time_delta)
-    #print(inicio)    
-    date_and_time_of_video = (date_and_time_of_video + time_delta)
-    #date_and_time_of_video = date_and_time_of_video + time_sec
-    print(date_and_time_of_video)
-#current_time_24hr = time.strftime("%H:%M:%S")
-#current_time_12hr = time.strftime("%I:%M:%S %p")
-#current_date = time.strftime("%Y-%m-%d")
-'''
-#model = YOLO('best_new_bees.pt')
-model = YOLO('abelhas_chegando.pt')
-#model.names
-#model.names = {0: 'Abelha'}
-#input(model.names)
-ABELHA_CIMA = "abelhas_cima.mp4"
-ABELHA_CIMA_10FPS = "part3600-12900-10fps.avi"
-video_da_vez = ABELHA_CIMA_10FPS
-vcap = cv2.VideoCapture(ABELHA_CIMA_10FPS)
+model_weight = "INSERT_WEIGHTS_PATH"
+model = YOLO('model_weight')
+VIDEO_PATH = "INSERT_VIDEO_PATH"
+video_da_vez = VIDEO_PATH
+vcap = cv2.VideoCapture(video_da_vez)
 bounding_box_annotator = sv.BoxAnnotator()
 label_annotator = sv.LabelAnnotator()
 trace_annotator = sv.TraceAnnotator()
@@ -77,10 +52,10 @@ fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 #input(width)
 #input(height)
 tracker = sv.ByteTrack(0.25)
-frames_generator = sv.get_video_frames_generator(ABELHA_CIMA_10FPS, start = 400)
+frames_generator = sv.get_video_frames_generator(video_da_vez, start = 400)
 heat_map_annotator = sv.HeatMapAnnotator()
-# frames_generator = sv.get_video_frames_generator(ABELHA_CIMA_10FPS)
-#video = cv2.VideoCapture(sasa)
+# frames_generator = sv.get_video_frames_generator(video_da_vez)
+
 #fps = video.get(cv2.CAP_PROP_FPS)
 #input(fps)
 
