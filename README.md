@@ -15,8 +15,11 @@ After annotating some 200~300 frames for object detection, I trained a yolov8-n 
 
 Because of these specificities, tracking and, most importantly, counting the number of bees that go in and out become a challenging task. Hence, I tried different techniques and filters. Mainly, I tried: 1) using a line to analyse if the detected bee crossed it from inside out (going out) or the inverse (going in); 2) comparing the first position of detection of each tracked bee to the last; 3) using two points as references and compare the first and last detections of a given bee (tracked) to those points to define if it's going in or out. You'll find three source codes correspondently.
 
-Both methods had their shortcomings due to the nature of the task, but also their successes. The methods using two points were, in the end, more effective.
+All methods had their value, but also their shortcomings due to the nature of the task. The methods using two points were or even just comparing first to last position were more effective. The line method was the most faulty one. For it to developed into a full fledged finished product, with the best accuracy possible, more treatment of the data would be required. Nonetheless, I believe and deem all of these developments as worthy, and that's why I uploaded the three of them. 
 
-The dataset is custom and is not available online. I have only uploaded the main python files and a few 'utils' python codes that I used (for example, video_to_frame). I've also uploaded a short video showing results. 
+I've uploaded three short videos showing results. 
 
-**OBSERVATION**: I did not have the time to adequately organize the code, I reckon it is a bit messy and there's work to be done there. I'm currently working on refactoring the personal projects I upload to github. 
+**OBSERVATIONS**: 
+**1)** I used a modified version of the annotator method in "LineZoneAnnotator" to display information on the videos. I uploaded my "Line_Zone" file together with the code. 
+**2)** I've shared, for now, the original video used for training and testing (reminder: I used the first two minutes for training). I've also uploaded the weights of the trained netowrk.
+**3)** I did not have the time to adequately organize the code, I reckon it is a bit messy and there's work to be done there. I'm currently working on refactoring the personal projects I upload to github. 
