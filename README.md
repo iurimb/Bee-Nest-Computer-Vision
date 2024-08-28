@@ -13,7 +13,7 @@ After annotating some 200~300 frames for object detection, I trained a yolov8-n 
 
 ![frame_386](https://github.com/user-attachments/assets/e94a531f-8d41-4363-a7d4-344fabd896ca)
 
-Because of these specificities, tracking and, most importantly, counting the number of bees that go in and out become a challenging task. Hence, I tried different techniques and filters. Mainly, I tried: 1) using a line to analyse if the detected bee crossed it from inside out (going out) or the inverse (going in); 2) using two points as references and compare the first and last detections of a given bee (tracked) to those points to define if it's going in or out;
+Because of these specificities, tracking and, most importantly, counting the number of bees that go in and out become a challenging task. Hence, I tried different techniques and filters. Mainly, I tried: 1) using a line to analyse if the detected bee crossed it from inside out (going out) or the inverse (going in); 2) comparing the first position of detection of each tracked bee to the last; 3) using two points as references and compare the first and last detections of a given bee (tracked) to those points to define if it's going in or out. You'll find three source codes correspondently.
 
 Both methods had their shortcomings due to the nature of the task, but also their successes. The methods using two points were, in the end, more effective.
 
