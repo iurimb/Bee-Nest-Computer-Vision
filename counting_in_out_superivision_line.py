@@ -5,13 +5,16 @@ import numpy as np
 from PIL import Image
 from supervision import Position
 
-model = YOLO('best_new_bees.pt')
-ABELHA_CIMA = "abelhas_cima.mp4"
-ABELHA_CIMA_10FPS = "part3600-12900-10fps.avi"
-sasa = r"C:\Users\noz\Documents\Clutch\Abelhas\part0-3600ABELHA_LATERAL.mp4"
-vcap = cv2.VideoCapture(ABELHA_CIMA)
+
+model_weight = "INSERT_WEIGHTS_PATH"
+model = YOLO('model_weight')
+VIDEO_PATH = "INSERT_VIDEO_PATH"
+video_da_vez = VIDEO_PATH
+vcap = cv2.VideoCapture(video_da_vez)
 bounding_box_annotator = sv.BoxAnnotator()
 label_annotator = sv.LabelAnnotator()
+trace_annotator = sv.TraceAnnotator()
+track_history = defaultdict(list)
 
 #tracker=sv.ByteTrack() #frame_rate: int = 30)
 width  = vcap.get(cv2.CAP_PROP_FRAME_WIDTH)   # float `width`
@@ -23,8 +26,8 @@ video = cv2.VideoWriter('tracking_counting_bees.mp4', fourcc, 15, (int(width), i
 #input(width)
 #input(height)
 tracker = sv.ByteTrack(0.4, 50)
-frames_generator = sv.get_video_frames_generator(ABELHA_CIMA)
-# frames_generator = sv.get_video_frames_generator(ABELHA_CIMA_10FPS)
+frames_generator = sv.get_video_frames_generator(video_da_vez)
+# frames_generator = sv.get_video_frames_generator(video_da_vez)
 #video = cv2.VideoCapture(sasa)
 #fps = video.get(cv2.CAP_PROP_FPS)
 #input(fps)
@@ -128,17 +131,7 @@ for frame in frames_generator:
     cv2.imshow("frame", annotated_frame)
     if cv2.waitKey(25) & 0xFF == ord('q'):
         break
-        #TODO pensar em uma lógica pra anotar a detecção sem o ID
-    #img_to_show = Image.fromarray(annotated_frame)
-    #img_to_show.show()
 
-        #input("stop")
-        #detections_crossed_in = detections[crossed_in]
-        
-        #print("DETECTIONS_FULL", detections)
-        #print("DETECTIONS_CROSSE", detections_crossed_in)
-        #print("CROSSED", crossed_in, crossed_out)
-        #input("veja ai")
        
         #for xyxy in detections_crossed_in.xyxy:
         #    crop = sv.crop_image(frame, xyxy)
